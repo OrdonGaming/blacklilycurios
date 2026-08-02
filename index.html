@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Black Lily Curios is a gothic artisan shop offering curious things for curious souls. Our online shop is coming soon.">
+
+    <title>Black Lily Curios | Coming Soon</title>
+
+    <link rel="preload"
+          href="images/black-lily-banner.png"
+          as="image">
+
+    <link rel="prefetch"
+          href="contact.html">
+
+    <script>
+        document.documentElement.classList.add("js");
+    </script>
+
+    <style>
+        :root {
+            --background: #08080a;
+            --panel: rgba(8, 7, 10, 0.86);
+            --text: #f1ece5;
+            --muted: #c4bbc1;
+            --accent: #a58bac;
+            --border: rgba(210, 194, 215, 0.4);
+            --page-padding: clamp(0.75rem, 2vh, 2rem);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            margin: 0;
+            padding: var(--page-padding);
+            overflow: hidden;
+
+            display: grid;
+            place-items: center;
+
+            color: var(--text);
+            font-family: Georgia, "Times New Roman", serif;
+
+            background:
+                linear-gradient(
+                    rgba(3, 3, 5, 0.5),
+                    rgba(3, 3, 5, 0.78)
+                ),
+                url("images/black-lily-banner.png")
+                center center / cover
+                no-repeat fixed;
+
+            background-color: var(--background);
+        }
+
+        .coming-soon {
+            width: min(760px, 100%);
+            max-height: calc(100dvh - var(--page-padding) - var(--page-padding));
+            padding: clamp(1.25rem, 4vh, 3.25rem);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background: var(--panel);
+            border: 1px solid var(--border);
+
+            outline: 1px solid rgba(255, 255, 255, 0.05);
+            outline-offset: -10px;
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.8),
+                inset 0 0 50px rgba(255, 255, 255, 0.02);
+
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .logo {
+            display: block;
+            width: min(430px, 90%, 42vh);
+            max-height: 42vh;
+            height: auto;
+            margin: 0 auto clamp(0.75rem, 2vh, 1.5rem);
+            object-fit: contain;
+
+            border-radius: 50%;
+
+            filter:
+                drop-shadow(0 8px 18px rgba(0, 0, 0, 0.9))
+                drop-shadow(0 0 15px rgba(135, 89, 164, 0.18));
+        }
+
+        .divider {
+            width: 130px;
+            height: 1px;
+            margin: clamp(0.65rem, 1.5vh, 1.25rem) auto;
+
+            background: linear-gradient(
+                to right,
+                transparent,
+                var(--accent),
+                transparent
+            );
+        }
+
+        h1 {
+            margin: 0 0 clamp(0.5rem, 1.25vh, 1rem);
+
+            font-size: clamp(1.25rem, 3.5vw, 2rem);
+            font-weight: normal;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+
+            text-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.95),
+                0 0 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .description {
+            max-width: 550px;
+            margin: 0 auto;
+
+            color: var(--muted);
+            font-size: clamp(0.9rem, 1.8vh, 1.05rem);
+            line-height: 1.55;
+
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+        }
+
+        .contact {
+            display: inline-block;
+            margin-top: clamp(0.8rem, 2vh, 1.5rem);
+            padding: 0.8rem 1.35rem;
+
+            color: var(--text);
+            background-color: rgba(15, 13, 18, 0.7);
+            border: 1px solid var(--border);
+
+            text-decoration: none;
+            letter-spacing: 0.1em;
+
+            transition:
+                background-color 180ms ease,
+                border-color 180ms ease,
+                transform 180ms ease;
+        }
+
+        .contact:hover,
+        .contact:focus-visible {
+            background-color: rgba(165, 139, 172, 0.22);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .contact:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        footer {
+            margin-top: clamp(0.85rem, 2vh, 1.75rem);
+
+            color: #918991;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+        }
+
+        @media (max-width: 700px) {
+            :root {
+                --page-padding: 0.75rem;
+            }
+
+            body {
+                padding: var(--page-padding);
+
+                background:
+                    linear-gradient(
+                        rgba(3, 3, 5, 0.6),
+                        rgba(3, 3, 5, 0.84)
+                    ),
+                    url("images/black-lily-banner.png")
+                    center center / cover
+                    no-repeat;
+            }
+
+            .coming-soon {
+                padding: clamp(1rem, 3vh, 2rem) 1.1rem;
+            }
+
+            .logo {
+                width: min(350px, 92%, 38vh);
+                max-height: 38vh;
+            }
+        }
+
+        @media (max-height: 700px) {
+            .coming-soon {
+                padding: 1rem 1.25rem;
+            }
+
+            .logo {
+                width: min(320px, 82%, 34vh);
+                max-height: 34vh;
+            }
+
+            .divider {
+                margin: 0.55rem auto;
+            }
+
+            .contact {
+                margin-top: 0.75rem;
+                padding: 0.7rem 1.2rem;
+            }
+
+            footer {
+                margin-top: 0.75rem;
+            }
+        }
+
+        /* Smooth transition between local website pages */
+        html {
+            scrollbar-gutter: stable;
+            background-color: var(--background);
+        }
+
+        html.js::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+
+            background: var(--background);
+            opacity: 1;
+            visibility: visible;
+            pointer-events: none;
+
+            transition:
+                opacity 320ms ease,
+                visibility 0s linear 0s;
+        }
+
+        html.js.page-ready::before {
+            opacity: 0;
+            visibility: hidden;
+
+            transition:
+                opacity 320ms ease,
+                visibility 0s linear 320ms;
+        }
+
+        html.js.page-leaving::before {
+            opacity: 1;
+            visibility: visible;
+
+            transition:
+                opacity 220ms ease,
+                visibility 0s linear 0s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html.js::before,
+            html.js.page-ready::before,
+            html.js.page-leaving::before {
+                transition: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <main class="coming-soon">
+
+        <img class="logo"
+             src="images/black-lily-logo_round_reduced-size.png"
+             alt="Black Lily Curios logo">
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <h1>Coming Soon</h1>
+
+        <p class="description">
+            A collection of handmade curios, carefully crafted
+            with heart and intention. Our online shop is currently
+            taking shape. Return soon and see what has emerged.
+        </p>
+
+        <a class="contact"
+           href="contact.html">
+            Contact the Shop
+        </a>
+
+        <footer>
+            &copy; 2026 Black Lily Curios
+        </footer>
+
+    </main>
+
+    <script>
+        (function () {
+            const root = document.documentElement;
+            let navigationStarted = false;
+
+            function revealPage() {
+                root.classList.remove("page-leaving");
+
+                requestAnimationFrame(function () {
+                    root.classList.add("page-ready");
+                });
+            }
+
+            if (document.readyState === "loading") {
+                document.addEventListener(
+                    "DOMContentLoaded",
+                    revealPage,
+                    { once: true }
+                );
+            } else {
+                revealPage();
+            }
+
+            window.addEventListener("pageshow", revealPage);
+
+            document.addEventListener("click", function (event) {
+                const link = event.target.closest("a[href]");
+
+                if (
+                    !link ||
+                    event.defaultPrevented ||
+                    event.button !== 0 ||
+                    event.metaKey ||
+                    event.ctrlKey ||
+                    event.shiftKey ||
+                    event.altKey ||
+                    link.target === "_blank" ||
+                    link.hasAttribute("download")
+                ) {
+                    return;
+                }
+
+                const href = link.getAttribute("href");
+
+                if (
+                    !href ||
+                    href.startsWith("#") ||
+                    href.startsWith("mailto:") ||
+                    href.startsWith("tel:") ||
+                    href.startsWith("javascript:")
+                ) {
+                    return;
+                }
+
+                let destination;
+
+                try {
+                    destination = new URL(href, window.location.href);
+                } catch (error) {
+                    return;
+                }
+
+                const isLocalFile = destination.protocol === "file:";
+                const isSameWebsite =
+                    destination.origin === window.location.origin;
+
+                if (!isLocalFile && !isSameWebsite) {
+                    return;
+                }
+
+                if (destination.href === window.location.href) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                if (navigationStarted) {
+                    return;
+                }
+
+                navigationStarted = true;
+                root.classList.add("page-leaving");
+
+                window.setTimeout(function () {
+                    window.location.href = destination.href;
+                }, 225);
+            });
+        }());
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Contact Black Lily Curios about custom creations, product questions, event requests, and other curiosities.">
+
+    <title>Contact the Shop | Black Lily Curios</title>
+
+    <link rel="preload"
+          href="images/black-lily-banner_reduced-size.png"
+          as="image">
+
+    <link rel="prefetch"
+          href="index.html">
+
+    <script>
+        document.documentElement.classList.add("js");
+    </script>
+
+    <style>
+        :root {
+            --background: #08080a;
+            --panel: rgba(8, 7, 10, 0.9);
+            --field: rgba(19, 16, 23, 0.88);
+            --text: #f1ece5;
+            --muted: #c4bbc1;
+            --accent: #a58bac;
+            --accent-light: #d8c5dd;
+            --border: rgba(210, 194, 215, 0.42);
+            --error: #efb7b7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem;
+
+            color: var(--text);
+            font-family: Georgia, "Times New Roman", serif;
+
+            background-image:
+                linear-gradient(
+                    rgba(3, 3, 5, 0.58),
+                    rgba(3, 3, 5, 0.82)
+                ),
+                url("images/black-lily-banner_reduced-size.png");
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: var(--background);
+        }
+
+        .page-shell {
+            width: min(920px, 100%);
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            padding: clamp(1.5rem, 5vw, 3.5rem);
+
+            background: var(--panel);
+            border: 1px solid var(--border);
+
+            outline: 1px solid rgba(255, 255, 255, 0.05);
+            outline-offset: -10px;
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.82),
+                inset 0 0 50px rgba(255, 255, 255, 0.02);
+
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(7px);
+        }
+
+        .header-banner {
+            display: block;
+            width: min(760px, 100%);
+            height: auto;
+            margin: 0 auto 1.75rem;
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.7),
+                0 0 18px rgba(135, 89, 164, 0.12);
+        }
+
+        .divider {
+            width: 130px;
+            height: 1px;
+            margin: 1.5rem auto;
+
+            background: linear-gradient(
+                to right,
+                transparent,
+                var(--accent),
+                transparent
+            );
+        }
+
+        h1 {
+            margin: 0;
+            text-align: center;
+
+            font-size: clamp(1.7rem, 5vw, 2.5rem);
+            font-weight: normal;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+
+            text-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.95),
+                0 0 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .intro {
+            max-width: 650px;
+            margin: 1rem auto 2rem;
+
+            color: var(--muted);
+            text-align: center;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        form {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        label,
+        legend {
+            color: var(--accent-light);
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+        }
+
+        .required {
+            color: var(--error);
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.85rem 0.95rem;
+
+            color: var(--text);
+            font: inherit;
+
+            background: var(--field);
+            border: 1px solid var(--border);
+            border-radius: 0;
+
+            transition:
+                border-color 160ms ease,
+                box-shadow 160ms ease,
+                background-color 160ms ease;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #8f8790;
+        }
+
+        select option {
+            color: #111;
+            background: #f1ece5;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(165, 139, 172, 0.16);
+            background-color: rgba(26, 21, 31, 0.95);
+        }
+
+        textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        fieldset {
+            margin: 0;
+            padding: 1rem;
+
+            border: 1px solid var(--border);
+        }
+
+        legend {
+            padding: 0 0.5rem;
+        }
+
+        .contact-preferences {
+            display: grid;
+            grid-template-columns: minmax(190px, 0.65fr) minmax(0, 1.35fr);
+            align-items: start;
+            gap: 1.25rem;
+        }
+
+        .contact-preferences fieldset {
+            width: min(230px, 100%);
+            height: auto;
+            justify-self: center;
+            padding: 1rem 1.25rem 1.25rem;
+        }
+
+        .contact-preferences legend {
+            width: auto;
+            margin: 0 auto;
+            padding: 0 0.5rem;
+            text-align: center;
+        }
+
+        .preference-details {
+            display: grid;
+            align-content: start;
+            gap: 1.25rem;
+        }
+
+        .radio-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .radio-option {
+            width: 92px;
+            justify-content: flex-start;
+        }
+
+        .checkbox-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.25rem;
+        }
+
+        .radio-option,
+        .checkbox-option {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            color: var(--muted);
+            line-height: 1.4;
+        }
+
+        .radio-option input,
+        .checkbox-option input {
+            width: auto;
+            margin: 0;
+            accent-color: var(--accent);
+        }
+
+        .help-text {
+            margin: 0;
+            color: #9f979f;
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }
+
+        input[type="file"] {
+            padding: 0.7rem;
+            cursor: pointer;
+        }
+
+        input[type="file"]::file-selector-button {
+            margin-right: 0.85rem;
+            padding: 0.65rem 0.9rem;
+
+            color: var(--text);
+            font: inherit;
+
+            background-color: rgba(165, 139, 172, 0.18);
+            border: 1px solid var(--border);
+
+            cursor: pointer;
+
+            transition:
+                background-color 160ms ease,
+                border-color 160ms ease;
+        }
+
+        input[type="file"]::file-selector-button:hover {
+            background-color: rgba(165, 139, 172, 0.3);
+            border-color: var(--accent);
+        }
+
+        .file-error {
+            min-height: 1.25rem;
+            margin: 0;
+            color: var(--error);
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        button,
+        .return-link {
+            display: inline-block;
+            min-width: 190px;
+            padding: 0.9rem 1.4rem;
+
+            color: var(--text);
+            font: inherit;
+            text-align: center;
+            text-decoration: none;
+            letter-spacing: 0.09em;
+
+            background-color: rgba(15, 13, 18, 0.78);
+            border: 1px solid var(--border);
+
+            cursor: pointer;
+
+            transition:
+                background-color 180ms ease,
+                border-color 180ms ease,
+                transform 180ms ease;
+        }
+
+        button:hover,
+        button:focus-visible,
+        .return-link:hover,
+        .return-link:focus-visible {
+            background-color: rgba(165, 139, 172, 0.24);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        button:focus-visible,
+        .return-link:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        footer {
+            margin-top: 2.25rem;
+            color: #918991;
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+        }
+
+        .honeypot {
+            position: absolute;
+            left: -9999px;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem;
+
+                background-image:
+                    linear-gradient(
+                        rgba(3, 3, 5, 0.65),
+                        rgba(3, 3, 5, 0.88)
+                    ),
+                    url("images/black-lily-banner_reduced-size.png");
+
+                background-attachment: scroll;
+            }
+
+            .contact-card {
+                padding: 2rem 1.1rem;
+            }
+
+            .header-banner {
+                width: 100%;
+                margin-bottom: 1.4rem;
+            }
+
+            .form-row,
+            .contact-preferences {
+                grid-template-columns: 1fr;
+            }
+
+            .actions {
+                display: grid;
+            }
+
+            button,
+            .return-link {
+                width: 100%;
+            }
+        }
+
+        /* Smooth transition between local website pages */
+        html {
+            scrollbar-gutter: stable;
+            background-color: var(--background);
+        }
+
+        html.js::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+
+            background: var(--background);
+            opacity: 1;
+            visibility: visible;
+            pointer-events: none;
+
+            transition:
+                opacity 320ms ease,
+                visibility 0s linear 0s;
+        }
+
+        html.js.page-ready::before {
+            opacity: 0;
+            visibility: hidden;
+
+            transition:
+                opacity 320ms ease,
+                visibility 0s linear 320ms;
+        }
+
+        html.js.page-leaving::before {
+            opacity: 1;
+            visibility: visible;
+
+            transition:
+                opacity 220ms ease,
+                visibility 0s linear 0s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html.js::before,
+            html.js.page-ready::before,
+            html.js.page-leaving::before {
+                transition: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <main class="page-shell">
+        <section class="contact-card" aria-labelledby="page-title">
+
+            <img class="header-banner"
+                 src="images/black-lily-banner_reduced-size.png"
+                 alt="Black Lily Curios banner">
+
+            <div class="divider" aria-hidden="true"></div>
+
+            <h1 id="page-title">Contact the Shop</h1>
+
+            <p class="intro">
+                Tell us what curious creation, product, or request you have in mind.
+                Fields marked with an asterisk are required.
+            </p>
+
+            <!--
+                FormSubmit sends the completed form and uploaded file to:
+                ariel@blacklilycurios.com
+
+                The first submission will trigger an activation email.
+                Open that email and confirm the form before it can deliver
+                future requests.
+            -->
+            <form action="https://formsubmit.co/ariel@blacklilycurios.com"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+                <input type="hidden"
+                       name="_subject"
+                       value="New Black Lily Curios Contact Request">
+
+                <div class="honeypot" aria-hidden="true">
+                    <label for="company-website">
+                        Leave this field empty
+                    </label>
+
+                    <input type="text"
+                           id="company-website"
+                           name="_honey"
+                           tabindex="-1"
+                           autocomplete="off">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">
+                            Name <span class="required">*</span>
+                        </label>
+
+                        <input type="text"
+                               id="name"
+                               name="name"
+                               autocomplete="name"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            Email address <span class="required">*</span>
+                        </label>
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               autocomplete="email"
+                               required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">
+                            Phone number
+                        </label>
+
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               autocomplete="tel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="request-type">
+                            Request type <span class="required">*</span>
+                        </label>
+
+                        <select id="request-type"
+                                name="request_type"
+                                required>
+                            <option value="General inquiry" selected>
+                                General Inquiry
+                            </option>
+                            <option value="Custom creation">
+                                Custom creation
+                            </option>
+                            <option value="Product question">
+                                Product question
+                            </option>
+                            <option value="Order question">
+                                Order question
+                            </option>
+                            <option value="Event or market inquiry">
+                                Event or market inquiry
+                            </option>
+                            <option value="Collaboration">
+                                Collaboration
+                            </option>
+                            <option value="Other">
+                                Other
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="contact-preferences">
+                    <fieldset>
+                        <legend>
+                            Preferred contact method
+                        </legend>
+
+                        <div class="radio-options">
+                            <label class="radio-option">
+                                <input type="radio"
+                                       name="preferred_contact"
+                                       value="Email"
+                                       checked>
+                                Email
+                            </label>
+
+                            <label class="radio-option">
+                                <input type="radio"
+                                       name="preferred_contact"
+                                       value="Phone">
+                                Phone
+                            </label>
+
+                            <label class="radio-option">
+                                <input type="radio"
+                                       name="preferred_contact"
+                                       value="Either">
+                                Either
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="preference-details">
+                        <div class="form-group">
+                            <label for="budget">
+                                Approximate budget
+                            </label>
+
+                            <select id="budget"
+                                    name="budget">
+                                <option value="" selected>
+                                    Not sure yet
+                                </option>
+                                <option value="Under $50">
+                                    Under $50
+                                </option>
+                                <option value="$50–$100">
+                                    $50–$100
+                                </option>
+                                <option value="$100–$250">
+                                    $100–$250
+                                </option>
+                                <option value="$250–$500">
+                                    $250–$500
+                                </option>
+                                <option value="$500 or more">
+                                    $500 or more
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="desired-date">
+                                Desired completion date
+                            </label>
+
+                            <input type="date"
+                                   id="desired-date"
+                                   name="desired_completion_date">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="details">
+                        Tell us about your request
+                        <span class="required">*</span>
+                    </label>
+
+                    <textarea id="details"
+                              name="request_details"
+                              placeholder="Describe what you are looking for, preferred colors or materials, dimensions, quantity, deadline, and any other helpful details."
+                              required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="reference-file">
+                        Reference image or inspiration file
+                    </label>
+
+                    <input type="file"
+                           id="reference-file"
+                           name="attachment"
+                           accept=".png,.jpg,.jpeg,.webp,.pdf,image/png,image/jpeg,image/webp,application/pdf"
+                           aria-describedby="file-help file-error">
+
+                    <p class="help-text" id="file-help">
+                        Optional. Accepted formats: PNG, JPG, JPEG, WEBP, or PDF.
+                        Maximum file size: 10 MB. The uploaded file will be
+                        included with the contact request email.
+                    </p>
+
+                    <p class="file-error"
+                       id="file-error"
+                       role="alert"
+                       aria-live="polite"></p>
+                </div>
+
+                <label class="checkbox-option checkbox-line">
+                    <input type="checkbox"
+                           name="permission_to_contact"
+                           value="Yes"
+                           required>
+
+                    I give Black Lily Curios permission to contact me about this
+                    request. <span class="required">*</span>
+                </label>
+
+                <div class="actions">
+                    <button type="submit">
+                        Send Request
+                    </button>
+
+                    <a class="return-link"
+                       href="index.html">
+                        Return Home
+                    </a>
+                </div>
+            </form>
+
+            <footer>
+                &copy; 2026 Black Lily Curios
+            </footer>
+
+        </section>
+    </main>
+    <script>
+        const contactForm = document.querySelector("form");
+        const referenceFile = document.getElementById("reference-file");
+        const fileError = document.getElementById("file-error");
+        const maxFileSize = 10 * 1024 * 1024;
+
+        function validateReferenceFile() {
+            fileError.textContent = "";
+            referenceFile.setCustomValidity("");
+
+            const selectedFile = referenceFile.files[0];
+
+            if (!selectedFile) {
+                return true;
+            }
+
+            if (selectedFile.size > maxFileSize) {
+                const message =
+                    "This file is larger than 10 MB. Please choose a smaller file.";
+
+                fileError.textContent = message;
+                referenceFile.setCustomValidity(message);
+                return false;
+            }
+
+            return true;
+        }
+
+        referenceFile.addEventListener("change", validateReferenceFile);
+
+        contactForm.addEventListener("submit", function (event) {
+            if (!validateReferenceFile()) {
+                event.preventDefault();
+                referenceFile.reportValidity();
+                referenceFile.focus();
+            }
+        });
+    </script>
+
+    <script>
+        (function () {
+            const root = document.documentElement;
+            let navigationStarted = false;
+
+            function revealPage() {
+                root.classList.remove("page-leaving");
+
+                requestAnimationFrame(function () {
+                    root.classList.add("page-ready");
+                });
+            }
+
+            if (document.readyState === "loading") {
+                document.addEventListener(
+                    "DOMContentLoaded",
+                    revealPage,
+                    { once: true }
+                );
+            } else {
+                revealPage();
+            }
+
+            window.addEventListener("pageshow", revealPage);
+
+            document.addEventListener("click", function (event) {
+                const link = event.target.closest("a[href]");
+
+                if (
+                    !link ||
+                    event.defaultPrevented ||
+                    event.button !== 0 ||
+                    event.metaKey ||
+                    event.ctrlKey ||
+                    event.shiftKey ||
+                    event.altKey ||
+                    link.target === "_blank" ||
+                    link.hasAttribute("download")
+                ) {
+                    return;
+                }
+
+                const href = link.getAttribute("href");
+
+                if (
+                    !href ||
+                    href.startsWith("#") ||
+                    href.startsWith("mailto:") ||
+                    href.startsWith("tel:") ||
+                    href.startsWith("javascript:")
+                ) {
+                    return;
+                }
+
+                let destination;
+
+                try {
+                    destination = new URL(href, window.location.href);
+                } catch (error) {
+                    return;
+                }
+
+                const isLocalFile = destination.protocol === "file:";
+                const isSameWebsite =
+                    destination.origin === window.location.origin;
+
+                if (!isLocalFile && !isSameWebsite) {
+                    return;
+                }
+
+                if (destination.href === window.location.href) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                if (navigationStarted) {
+                    return;
+                }
+
+                navigationStarted = true;
+                root.classList.add("page-leaving");
+
+                window.setTimeout(function () {
+                    window.location.href = destination.href;
+                }, 225);
+            });
+        }());
+    </script>
+
+</body>
+</html>
