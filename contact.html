@@ -665,8 +665,9 @@
                        value="New Black Lily Curios Contact Request">
 
                 <input type="hidden"
+                       id="next-page"
                        name="_next"
-                       value="https://ordongaming.github.io/thanks.html">
+                       value="">
 
                 <div class="honeypot" aria-hidden="true">
                     <label for="company-website">
@@ -890,7 +891,18 @@
         const contactForm = document.querySelector("form");
         const referenceFile = document.getElementById("reference-file");
         const fileError = document.getElementById("file-error");
+        const nextPage = document.getElementById("next-page");
         const maxFileSize = 10 * 1024 * 1024;
+
+        /*
+            Build the full thank-you-page address from the current page.
+            This automatically preserves the GitHub repository path and
+            will continue to work after moving to a custom domain.
+        */
+        nextPage.value = new URL(
+            "thanks.html",
+            window.location.href
+        ).href;
 
         function validateReferenceFile() {
             fileError.textContent = "";
